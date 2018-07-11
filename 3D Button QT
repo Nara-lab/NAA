@@ -1,0 +1,16 @@
+    const QSize btnSize = QSize(60, 30);
+    const QSize btnSize_text = QSize(50,30);
+    QPushButton *Button_0 = new QPushButton(tr("Nara"));
+
+    Button_0 -> setFixedSize(btnSize);
+    Button_0->setStyleSheet(QString::fromUtf8("QPushButton {font: bold;"\
+                           "font-size: 16px;"\
+                           "height: 35px;"\
+                           "width: 100px;"\
+                           "background-color:#30211f;"\
+                           "border  :1px solid #602f28;"\
+                           "border-width: 1px;"\
+                           "border-radius: 10px;"\
+                           "background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67,stop: 0 #0f0000, stop: 1 #fcf4f4)}"\
+                          " QPushButton:pressed {background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.67,stop: 0 #ea3d09, stop: 1 #681c05);};"
+));
