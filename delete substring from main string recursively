@@ -1,0 +1,19 @@
+if ((!strstr(S.c_str(), a.c_str())) && (!strstr(S.c_str(), b.c_str())) && (!strstr(S.c_str(), c.c_str())))
+	{
+		return S;
+		abc++;
+		cout << abc << "aaa\n";
+	}
+	else
+	{
+		if (strstr(S.c_str(), a.c_str())) {
+			int start_pos = S.find(a);
+			cout << "start pos is" << start_pos << endl;
+			string op1 = S.erase(start_pos, 2);
+			cout << op1 << endl;
+			op1 = function(op1);
+			abc++;
+			cout << abc << "bbbb\n";
+			return op1;
+		}
+		else if (strstr(S.c_str(), b.c_str())) {
