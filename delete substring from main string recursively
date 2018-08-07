@@ -1,4 +1,10 @@
-if ((!strstr(S.c_str(), a.c_str())) && (!strstr(S.c_str(), b.c_str())) && (!strstr(S.c_str(), c.c_str())))
+
+string function(string &S)
+{
+	string a = "AA";
+	string b = "BB";
+	string c = "CC";
+	if ((!strstr(S.c_str(), a.c_str())) && (!strstr(S.c_str(), b.c_str())) && (!strstr(S.c_str(), c.c_str())))
 	{
 		return S;
 		abc++;
@@ -17,3 +23,35 @@ if ((!strstr(S.c_str(), a.c_str())) && (!strstr(S.c_str(), b.c_str())) && (!strs
 			return op1;
 		}
 		else if (strstr(S.c_str(), b.c_str())) {
+		int start_pos = S.find(b);
+			cout << "start pos is" << start_pos << endl;
+			string op2 = S.erase(start_pos, 2);
+			cout << "String is" << op2 << endl;
+			op2 = function(op2);
+			abc++;
+			cout << abc << "cccc\n";
+			return op2;
+		}
+		else {
+			int start_pos = S.find(c);
+			cout << "start pos is" << start_pos << endl;
+			string op3 = S.erase(start_pos, 2);
+			cout << "String is" << op3 << endl;
+			op3 = function(op3);
+			abc++;
+			cout << abc << "dddd\n";
+			return op3;
+		}
+	}
+}
+int main()
+{
+	string str = "CAAAAAAAAAB";//output: CAB
+	string s = "ACCAABBC";//output: AC
+	string s22 = "ABC";//output: ABC
+	string s1 = "ABCBBCBA";//output: NULL
+	string s2 = "ABCABCAB";//output: ABCABCAB
+	string s3 = function(str);
+	cout << "String is" << s3;
+	return 0;
+}
