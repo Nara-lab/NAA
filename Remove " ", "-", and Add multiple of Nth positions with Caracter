@@ -1,0 +1,49 @@
+
+#include <iostream>
+#include <cstring>
+#include <algorithm>
+#include <sstream>
+
+using namespace std;
+string solution(string &S)
+{
+    string a = "-";
+    string b = " ";
+    if (!strstr(S.c_str(), a.c_str()) && !strstr(S.c_str(),b.c_str()))
+    {
+        std::stringstream ss;
+        ss << S[0];
+		for(unsigned int i = 1; i < S.size(); i++)
+        {
+        if(i %3 == 0)
+        {
+            ss <<'-';
+        }
+        ss<<S[i];
+    }
+    cout << ss.str();
+    return ss.str();
+    }
+    else if (strstr(S.c_str(), a.c_str()))
+    {
+			int start_pos = S.find(a);
+			string op1 = S.erase(start_pos, 1);
+			op1 = solution(op1);
+			return op1;
+    }
+    else if (strstr(S.c_str(), b.c_str()))
+    {
+			int start_pos = S.find(b);
+			string op1 = S.erase(start_pos, 1);
+			op1 = solution(op1);
+			return op1;
+    }
+}
+
+int main()
+{
+    string sx = "01 231-231-23";
+    solution(sx);
+    return 0;
+    
+}
